@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+	     .cube,.cube-inner,.cube-outer,.core{
+		    list-style-type:none;
+			width: 150px;
+            height: 150px;
+            padding: 0;
+            transform-origin: 50px 50px;
+            transform: rotateX(-33.5deg) rotateY(45deg);
+            transform-style: preserve-3d;
+            //animation: slowspin 10s ease-in-out infinite 2s;
+            margin: 50px 0 0 50px;
+            top: 50%;
+            left: 50%;
+			position: absolute;
+            display: block;
+		 }
+		 .cube-inner{
+		    width: 90px;
+			height: 90px;
+			transform-origin: 25px 25px;
+			margin: 75px 0 0 75px;
+		 }
+		 .core{
+		    margin: 92px 0 0 92px;
+			transform-origin: 7px 7px;
+		 }
+		 .cube li,.cube-inner li,.cube-outer li,.core li{
+		    width: 75pt;
+			height: 75pt;
+			transition: transform 1s ease-in-out;
+			position: absolute;
+			display: block;
+		 }
+		 .cube-inner li{
+		    width: 50px;
+			height: 50px;
+		 }
+		 .cube-outer li{
+		    width: 120pt;
+			height: 120pt;
+			background: rgba(16,47,91,.1)!important;
+		 }
+		 .core li{
+		    width: 12px;
+			height: 12px;
+		 }
+		 .left-back,.left-font,.left-font,.bottom,.right-font,.right-back,top{
+		    background: radial-gradient(transparent 30%,rgba(16,47,91,.2) 100%);
+		 }
+		 
+		 .cube li:after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 75pt;
+            height: 75pt;
+            backface-visibility: hidden;
+            background-color: rgba(126,169,232,.2);
+            transition: transform 1s ease-in-out;
+        }
+		.cube-inner li:after{
+		    content: "";
+            display: block;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            backface-visibility: hidden;
+            background-color: rgba(126,169,232,.3);
+            transition: transform 1s ease-in-out;
+		}
+		.cube-outer li:after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 120pt;
+            height: 120pt;
+            backface-visibility: hidden;
+            background-color: rgba(126,169,232,.1);
+            transition: transform 1s ease-in-out;
+        }
+		.core li:after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            backface-visibility: hidden;
+            background-color: rgba(126,169,232,8);
+            transition: transform 1s ease-in-out;
+        }
+		.right-back{
+		    transform: translateZ(50px);
+		}
+		.cube-inner .right-back{
+		    transform: translateZ(25px);
+		}
+		.cube-outer .right-back{
+		    transform: translateZ(160px);
+		}
+		.core .right-back{
+		    transform: translateZ(6px);
+		}
+		.right-font{
+		    transform: rotateY(90deg) translateZ(50px);
+		}
+		.cube-inner .right-font{
+		    transform: rotateY(90deg) translateZ(25px);
+		}
+		.cube-outer .right-font{
+		    transform: rotateY(90deg) translateZ(160px);
+		}
+		.core .right-font{
+		    transform: rotateY(90deg) translateZ(6px);
+		}
+		.bottom{
+		    transform: rotateX(-90deg) translateZ(50px);
+		}
+		.cube-inner	.bottom{
+		    transform: rotateX(-90deg) translateZ(25px);
+		}
+		.cube-outer .bottom{
+		    transform: rotateX(-90deg) translateZ(160px);
+		}
+		.core .bottom{
+		    transform: rotateX(-90deg) translateZ(6px);
+		}
+		.top{
+		    transform: rotateX(-90deg) translateZ(-50px);
+		}
+		.cube-inner	.top{
+		    transform: rotateX(-90deg) translateZ(-25px);
+		}
+		.cube-outer	.top{
+		    transform: rotateX(-90deg) translateZ(-160px);
+		}
+		.core .top{
+		    transform: rotateX(-90deg) translateZ(-6px);
+		}
+		.left-font{
+		    transform: rotateY(270deg) translateZ(50px);
+		}
+		.cube-inner	.left-font{
+		    transform: rotateY(270deg) translateZ(25px);
+		}
+		.cube-outer	.left-font{
+		    transform: rotateY(270deg) translateZ(160px);
+		}
+		.core .left-font{
+		    transform: rotateY(270deg) translateZ(6px);
+		}
+		.left-back{
+		    transform: rotateY(180deg) translateZ(50px);
+		}
+		.cube-inner .left-back{
+		    transform: rotateY(180deg) translateZ(25px);
+		}
+		.cube-outer .left-back{
+		    transform: rotateY(180deg) translateZ(160px);
+		}
+		.core .left-back{
+		    transform: rotateY(180deg) translateZ(6px);
+		}
+    </style>
+</head>
+<body>
+  <ul class="core">
+    <li class="left-back"></li>
+    <li class="left-font"></li>
+    <li class="bottom"></li>
+    <li class="right-font"></li>
+    <li class="right-back"></li>
+    <li class="top"></li>
+  </ul>
+  <ul class="cube-inner">
+    <li class="left-back"></li>
+    <li class="left-font"></li>
+    <li class="bottom"></li>
+    <li class="right-font"></li>
+    <li class="right-back"></li>
+    <li class="top"></li>
+  </ul>
+  <ul class="cube">
+    <li class="left-back"></li>
+    <li class="left-font"></li>
+    <li class="bottom"></li>
+    <li class="right-font"></li>
+    <li class="right-back"></li>
+    <li class="top"></li>
+  </ul>
+    <ul class="cube-outer">
+    <li class="left-back"></li>
+    <li class="left-font"></li>
+    <li class="bottom"></li>
+    <li class="right-font"></li>
+    <li class="right-back"></li>
+    <li class="top"></li>
+  </ul>
+<script>
+   var cube = document.querySelector(".cube");
+   var cubeInner = document.querySelector(".cube-inner");
+   var cubeOuter = document.querySelector(".cube-outer");
+   var core = document.querySelector(".core");
+   var x = -33.5; var ix = -33.5;var ox = -33.5;var cx = -33.5
+   var y = 45; var iy = 45;var oy = 45;var cy = 45;
+   setInterval(function(){
+   	   cx+=-Math.random()*100;
+       cy+=-Math.random()*100;
+       ix+=-Math.random()*10;
+       iy+=-Math.random()*10;
+       x+=Math.random();
+       y+=Math.random();
+	   ox+=-Math.random()/10;
+       oy+=-Math.random()/10;
+       cube.style.transform = "rotateX("+x+"deg) rotateY("+y+"deg)";
+	   cubeInner.style.transform = "rotateX("+ix+"deg) rotateY("+iy+"deg)";
+	   cubeOuter.style.transform = "rotateX("+ox+"deg) rotateY("+oy+"deg)";
+	   core.style.transform = "rotateX("+cx+"deg) rotateY("+cy+"deg)";
+   }, 30)
+</script>
+</body>
+</html>
