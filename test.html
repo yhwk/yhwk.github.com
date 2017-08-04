@@ -10,9 +10,12 @@
     <title>下载跳转</title>
 	<script>
 	    var u = navigator.userAgent;
+		var isWeiXin() = u.indexOf('MicroMessenger') > -1 //微信
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-		if(isAndroid){
+		if(isWeiXin){
+		  window.location.href="http://app.qq.com/#id=detail&appid=100951776";
+		} else if(isAndroid){
 		  window.location.href="/download/1.apk";
 		} else if(isiOS){
 		  window.location.href="/cube.html";
