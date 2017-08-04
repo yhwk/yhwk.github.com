@@ -13,9 +13,9 @@
         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 		if(isAndroid){
-		  window.href="/download/1.apk";
+		  window.location.href="/download/1.apk";
 		} else if(isiOS){
-		  window.href="/cube.html";
+		  window.location.href="/cube.html";
 		}
 	</script>
 <head>
